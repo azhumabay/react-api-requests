@@ -1,5 +1,5 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Home, PostList, UserList } from "../pages";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import { Home, PostList, UserList, Error } from "../pages";
 import { Layout } from "../layout";
 
 export const router = createBrowserRouter([
@@ -11,4 +11,6 @@ export const router = createBrowserRouter([
       { path: "/post-list", element: <PostList /> },
     ],
   },
+  { path: "/404", element: <Error /> },
+  { path: "*", element: <Navigate to="/404" replace /> },
 ]);
