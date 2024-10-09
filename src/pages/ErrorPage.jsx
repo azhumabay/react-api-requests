@@ -1,13 +1,13 @@
-import { useCallback } from "react";
 import { Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { APP_PATH } from "../const/router";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
 
-  const backToUserListPage = useCallback(() => {
-    navigate("/user-list");
-  }, []);
+  const backToUserListPage = () => {
+    navigate(APP_PATH.HOME);
+  };
 
   return (
     <Container
