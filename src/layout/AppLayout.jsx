@@ -1,23 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import AppHeader from "../components/AppHeader";
 
 export default function AppLayout() {
   return (
     <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/user-list">Users</Link>
-            </li>
-            <li>
-              <Link to="/post-list">Posts</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>
+      <AppHeader />
+
+      <Container>
         <Outlet />
-      </main>
+      </Container>
     </>
   );
 }
