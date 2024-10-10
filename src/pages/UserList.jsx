@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Loader from "../components/Loader";
 import { ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const UserList = () => {
     <>
       <h1 className="mb-4">Users</h1>
       {loading ? (
-        <div className="mt-3 ms-4">
+        <div className="mt-3">
           <Loader />
         </div>
       ) : (

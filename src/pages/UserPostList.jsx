@@ -21,8 +21,6 @@ const UserPostList = () => {
   const userPosts =
     posts?.filter((post) => post.userId === Number(userId)) || [];
 
-  console.log(userPosts);
-
   if (error) <div>Error: {error}</div>;
 
   return (
@@ -31,7 +29,7 @@ const UserPostList = () => {
         Вернуться назад
       </Button>
       {loading ? (
-        <div className="mt-3 ms-5">
+        <div className="mt-3">
           <Loader />
         </div>
       ) : (

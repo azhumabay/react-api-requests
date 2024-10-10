@@ -2,7 +2,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useAxios } from "../use";
 import { useEffect } from "react";
-import { BASE_API_URL } from "../const/api";
 import Loader from "../components/Loader";
 
 const Post = () => {
@@ -27,7 +26,7 @@ const Post = () => {
         Вернуться назад
       </Button>
       {loading ? (
-        <div className="mt-3 ms-5">
+        <div className="mt-3">
           <Loader />
         </div>
       ) : (

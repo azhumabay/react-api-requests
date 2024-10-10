@@ -23,7 +23,7 @@ const PostList = () => {
     <>
       <h1 className="mb-4">Posts</h1>
       {loading ? (
-        <div className="mt-3 ms-4">
+        <div className="mt-3">
           <Loader />
         </div>
       ) : (
