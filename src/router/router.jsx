@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Home, PostList, UserList, Error, UserPostList } from "../pages";
+import { Home, PostList, UserList, Error, UserPostList, Post } from "../pages";
 import { Layout } from "../layout";
 import { APP_PATH } from "../const/router";
 
@@ -11,7 +11,8 @@ export const router = createBrowserRouter([
       { path: APP_PATH.MAIN, element: <Navigate to={APP_PATH.HOME} replace /> },
       { path: APP_PATH.USER_LIST, element: <UserList /> },
       { path: APP_PATH.POST_LIST, element: <PostList /> },
-      { path: `${APP_PATH.USER}/:id`, element: <UserPostList /> },
+      { path: `${APP_PATH.USER_LIST}/:userId`, element: <UserPostList /> },
+      { path: `${APP_PATH.POST_LIST}/:postId`, element: <Post /> },
     ],
   },
   // { path: APP_PATH.ERROR, element: <Error /> },

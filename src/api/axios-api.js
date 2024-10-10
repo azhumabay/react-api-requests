@@ -1,7 +1,8 @@
 import axios from "axios";
+import { BASE_API_URL } from "../const/api";
 
-const axiosAPI = async () => {
-  const data = await axios.get("https://jsonplaceholder.typicode.com/users");
+const axiosAPI = async (url) => {
+  const data = await axios.get(`${BASE_API_URL}${url}`);
   return data.data;
 };
 
