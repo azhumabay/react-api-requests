@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 
 const UserPostList = () => {
   const { data: posts, axiosData, loading, error } = useAxios();
+  const { data: user, axiosData: axiosUsers } = useAxios();
   const navigate = useNavigate();
   const { userId } = useParams();
 
@@ -16,6 +17,7 @@ const UserPostList = () => {
 
   useEffect(() => {
     axiosData(`${APP_PATH.POST_LIST}`);
+    axiosUsers(`${APP_PATH.USER_LIST}/${userId}`);
   }, [axiosData]);
 
   const userPosts =
@@ -34,7 +36,9 @@ const UserPostList = () => {
         </div>
       ) : (
         <>
-          <h1 className="mb-4">User Posts</h1>
+          <h1 className="mb-4">
+            {user.name !== undefined ? `${user.name}'s Posts` : ""}
+          </h1>
           <ListGroup>
             {userPosts.map(({ id, title }) => (
               <ListGroup.Item key={id}>
